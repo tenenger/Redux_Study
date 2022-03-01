@@ -47,11 +47,16 @@ function reducer(state = initialState, action) {
       return state;
   }
 }
+/* 여기까지 리덕스 모듈로, modules폴더안에 하나의 파일로 존재한다. */
 
+/* 
+src/index.js파일에 store를 정의한다. 
+
+만약 reducer가 2개 이상일 경우에는 modules폴더에 index.js파일로 rootReducer를 정의하여  src/index.js파일에 store를 정의한다.
+*/
 // store를 만든다. createStore는 reducer를 매개변수로 받는다.
 const store = createStore(reducer);
 
-// listner 함수는
 const listener = () => {
   const state = store.getState();
   console.log(state);
